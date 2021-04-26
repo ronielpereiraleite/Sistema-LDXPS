@@ -25,20 +25,20 @@ def funcao_principal_cliente():
         print("Pessoa Juridica")
         tipo_pessoa = "Juridica"
 
-        if tela_criar_cliente.radioButton_2.isChecked():
+    if tela_criar_cliente.radioButton_2.isChecked():
             print("Pessoa Fisica")
             tipo_pessoa = "Fisica"
 
         # cadastrar cliente no banco
-        cursor = banco.cursor()
-        comando_sql = "INSERT INTO cliente(NOME,id_clien_vende,limite_credito,tipo_pessoa) VALUES (%s,%s,%s,%s)"
-        dados = (str(linhaNomeCliente), str(linhaCodVendedor), str(linhaLimiteCred), tipo_pessoa)
-        cursor.execute(comando_sql, dados)
-        banco.commit()
+    cursor = banco.cursor()
+    comando_sql = "INSERT INTO cliente(NOME,id_clien_vende,limite_credito,tipo_pessoa) VALUES (%s,%s,%s,%s)"
+    dados = (str(linhaNomeCliente), str(linhaCodVendedor), str(linhaLimiteCred), tipo_pessoa)
+    cursor.execute(comando_sql, dados)
+    banco.commit()
         
-        tela_criar_cliente.lineEdit.setText("")
-        tela_criar_cliente.lineEdit_2.setText("")
-        tela_criar_cliente.lineEdit_3.setText("")
+    tela_criar_cliente.lineEdit.setText("")
+    tela_criar_cliente.lineEdit_2.setText("")
+    tela_criar_cliente.lineEdit_3.setText("")
 
 
 def funcao_principal_vendedor():
@@ -93,6 +93,19 @@ def visualizar_vendedores():
         for j in range(0, 3):
             primeira_tela.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
 
+def excluir_vendedor():
+    linha = primeira_tela.tableWidget.currentRow()
+    primeira_tela.tableWidget.removeRow(linha)
+
+    cursor = banco.cursor()
+    cursor.execute("SELECT id FROM vendedor")
+    dados_lidos = cursor.fetchall()
+    valor_id = dados_lidos[linha][0]
+
+    cursor.execute("DELETE FROM vendedor WHERE id="+ str(valor_id))
+
+
+
 
 def chama_tela_criar_vendedor():
     tela_criar_vendedor.show()
@@ -132,11 +145,11 @@ tela_excluir_cliente=uic.loadUi("excluirCliente.ui")
 # vendedor
 primeira_tela.pushButtonVenCriar.clicked.connect(chama_tela_criar_vendedor)
 primeira_tela.pushButtonVenEditar.clicked.connect(chama_tela_editar_vendedor)
-primeira_tela.pushButtonVenExcluir.clicked.connect(chama_excluir_vendedor)
+# primeira_tela.pushButtonVenExcluir.clicked.connect(chama_excluir_vendedor)
 # cliente
 primeira_tela.pushButtonClienCriar.clicked.connect(chama_tela_criar_cliente)
 primeira_tela.pushButtonClienEditar.clicked.connect(chama_tela_editar_cliente)
-primeira_tela.pushButtonClienExcluir.clicked.connect(chama_excluir_cliente)
+#primeira_tela.pushButtonClienExcluir.clicked.connect(chama_excluir_cliente)
 primeira_tela.pushButtonSair.clicked.connect(exit)
 # clik confirmar cadastro de vendedor
 tela_criar_vendedor.pushButton.clicked.connect(funcao_principal_vendedor)
@@ -146,6 +159,8 @@ tela_criar_cliente.pushButtonCadastroCliente.clicked.connect(funcao_principal_cl
 primeira_tela.pushButtonVenVisualizar.clicked.connect(visualizar_vendedores)
 # botão visualizar cliente
 primeira_tela.pushButtonClienVisualizar.clicked.connect(visualizar_clientes)
+# excluir dados da tabela
+primeira_tela.pushButtonClienExcluir.clicked.connect(excluir_vendedor)
 
 
 
