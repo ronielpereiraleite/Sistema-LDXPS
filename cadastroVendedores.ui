@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>230</height>
+    <height>577</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -19,7 +19,7 @@
   <property name="maximumSize">
    <size>
     <width>500</width>
-    <height>230</height>
+    <height>600</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -63,7 +63,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>10</y>
+         <y>30</y>
          <width>91</width>
          <height>41</height>
         </rect>
@@ -79,31 +79,11 @@
         <string>Nome:</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>50</y>
-         <width>81</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Codigo:</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_3">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>100</y>
+         <y>90</y>
          <width>191</width>
          <height>31</height>
         </rect>
@@ -123,7 +103,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>150</y>
+         <y>170</y>
          <width>101</width>
          <height>41</height>
         </rect>
@@ -146,7 +126,7 @@
        <property name="geometry">
         <rect>
          <x>180</x>
-         <y>150</y>
+         <y>170</y>
          <width>111</width>
          <height>41</height>
         </rect>
@@ -165,11 +145,11 @@
         <string>Excluir</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="pushButtonClienCadastro">
        <property name="geometry">
         <rect>
          <x>360</x>
-         <y>150</y>
+         <y>170</y>
          <width>131</width>
          <height>41</height>
         </rect>
@@ -185,27 +165,14 @@
         <string notr="true">background-color: rgb(0, 255, 0);</string>
        </property>
        <property name="text">
-        <string>Criar vendedor</string>
+        <string>Criar Cliente</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="lineEditNome">
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>19</y>
-         <width>361</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_2">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>60</y>
+         <y>40</y>
          <width>361</width>
          <height>31</height>
         </rect>
@@ -219,14 +186,20 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>490</width>
-         <height>9</height>
+         <width>791</width>
+         <height>20</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>9</height>
+         <height>20</height>
         </size>
        </property>
        <property name="styleSheet">
@@ -238,12 +211,32 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>0</y>
+          <width>221</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Cadastro de Vendedor</string>
+        </property>
+       </widget>
       </widget>
-      <widget class="QDateEdit" name="dateEdit">
+      <widget class="QDateEdit" name="dateEditData">
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>101</y>
+         <y>90</y>
          <width>361</width>
          <height>31</height>
         </rect>
@@ -251,6 +244,63 @@
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
+       <property name="displayFormat">
+        <string>yyyy/MM/dd</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QFrame" name="frame_3">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>220</y>
+         <width>791</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 255, 255);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>0</y>
+          <width>221</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Clientes</string>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>230</height>
+    <height>300</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -19,7 +19,7 @@
   <property name="maximumSize">
    <size>
     <width>500</width>
-    <height>230</height>
+    <height>300</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -63,7 +63,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>10</y>
+         <y>30</y>
          <width>91</width>
          <height>41</height>
         </rect>
@@ -77,26 +77,6 @@
        </property>
        <property name="text">
         <string>Nome:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>50</y>
-         <width>81</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Codigo:</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_3">
@@ -116,14 +96,14 @@
         </font>
        </property>
        <property name="text">
-        <string>Data/Nasc:</string>
+        <string>Cod/Vend:</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButtonCadastroCliente">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>150</y>
+         <y>230</y>
          <width>101</width>
          <height>41</height>
         </rect>
@@ -146,7 +126,7 @@
        <property name="geometry">
         <rect>
          <x>190</x>
-         <y>150</y>
+         <y>230</y>
          <width>111</width>
          <height>41</height>
         </rect>
@@ -169,7 +149,7 @@
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>150</y>
+         <y>230</y>
          <width>121</width>
          <height>41</height>
         </rect>
@@ -192,20 +172,7 @@
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>19</y>
-         <width>361</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_2">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>60</y>
+         <y>40</y>
          <width>361</width>
          <height>31</height>
         </rect>
@@ -219,14 +186,20 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>490</width>
-         <height>9</height>
+         <width>1171</width>
+         <height>20</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>9</height>
+         <height>20</height>
         </size>
        </property>
        <property name="styleSheet">
@@ -238,12 +211,105 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>0</y>
+          <width>221</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Cadastro de Cliente</string>
+        </property>
+       </widget>
       </widget>
-      <widget class="QDateEdit" name="dateEdit">
+      <widget class="QRadioButton" name="radioButton">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>190</y>
+         <width>181</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Pessoa Juridica</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_2">
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>101</y>
+         <y>190</y>
+         <width>151</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Pessoa Fisica</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>100</y>
+         <width>361</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>150</y>
+         <width>191</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>13</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Limite/cred:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_3">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>150</y>
          <width>361</width>
          <height>31</height>
         </rect>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>530</height>
+    <width>754</width>
+    <height>640</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -419,6 +419,26 @@
            </property>
           </widget>
          </widget>
+         <widget class="QTableWidget" name="tableWidget">
+          <property name="geometry">
+           <rect>
+            <x>150</x>
+            <y>10</y>
+            <width>551</width>
+            <height>591</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(175, 175, 175);</string>
+          </property>
+         </widget>
         </widget>
        </item>
       </layout>
@@ -431,7 +451,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>754</width>
      <height>21</height>
     </rect>
    </property>
