@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>754</width>
-    <height>640</height>
+    <height>568</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -88,7 +88,7 @@
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(150, 150, 150);</string>
+          <string notr="true">background-color: rgb(58, 58, 58);</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -422,10 +422,10 @@
          <widget class="QTableWidget" name="tableWidget">
           <property name="geometry">
            <rect>
-            <x>150</x>
+            <x>130</x>
             <y>10</y>
-            <width>551</width>
-            <height>591</height>
+            <width>611</width>
+            <height>651</height>
            </rect>
           </property>
           <property name="font">
@@ -436,7 +436,7 @@
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(175, 175, 175);</string>
+           <string notr="true">background-color: rgb(161, 161, 161);</string>
           </property>
          </widget>
         </widget>

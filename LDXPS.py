@@ -20,12 +20,14 @@ def funcao_principal_cliente():
 
     tipo_pessoa = ""
 
-    if tela_criar_cliente.radioButton_2.isChecked():
-        print("Pessoa Fisica")
-        tipo_pessoa = "Pessoa Fisica"
-    else:
+
+    if tela_criar_cliente.radioButtonJuridica.isChecked():
         print("Pessoa Juridica")
-        tipo_pessoa = "Pessoa Juridica"
+        tipo_pessoa = "Juridica"
+
+        if tela_criar_cliente.radioButton_2.isChecked():
+            print("Pessoa Fisica")
+            tipo_pessoa = "Fisica"
 
         # cadastrar cliente no banco
         cursor = banco.cursor()
@@ -33,7 +35,7 @@ def funcao_principal_cliente():
         dados = (str(linhaNomeCliente), str(linhaCodVendedor), str(linhaLimiteCred), tipo_pessoa)
         cursor.execute(comando_sql, dados)
         banco.commit()
-
+        
         tela_criar_cliente.lineEdit.setText("")
         tela_criar_cliente.lineEdit_2.setText("")
         tela_criar_cliente.lineEdit_3.setText("")
@@ -56,6 +58,40 @@ def funcao_principal_vendedor():
     tela_criar_vendedor.lineEditNome.setText("")
 
 
+def visualizar_clientes():
+    cursor = banco.cursor()
+    comando_sql = "SELECT * FROM cliente"
+    cursor.execute(comando_sql)
+    dados_lidos = cursor.fetchall()
+    print(dados_lidos)
+
+
+    print(len(dados_lidos))
+
+    primeira_tela.tableWidget.setRowCount(len(dados_lidos))
+    primeira_tela.tableWidget.setColumnCount(5)
+
+    for i in range(0, len(dados_lidos)):
+        for j in range(0, 5):
+            primeira_tela.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
+
+
+
+def visualizar_vendedores():
+    cursor = banco.cursor()
+    comando_sql = "SELECT * FROM vendedor"
+    cursor.execute(comando_sql)
+    dados_lidos = cursor.fetchall()
+    print(dados_lidos)
+
+    print(len(dados_lidos))
+
+    primeira_tela.tableWidget.setRowCount(len(dados_lidos))
+    primeira_tela.tableWidget.setColumnCount(3)
+
+    for i in range(0, len(dados_lidos)):
+        for j in range(0, 3):
+            primeira_tela.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
 
 
 def chama_tela_criar_vendedor():
@@ -79,10 +115,11 @@ def chama_excluir_cliente():
 
 
 
-app=QtWidgets.QApplication([])
 
+app=QtWidgets.QApplication([])
 # chama o arquivo para ser ezecutado pela função
 primeira_tela=uic.loadUi("interface.ui")
+#tela_principal=uic.loadUi("interface.ui")
 #  vendedor
 tela_criar_vendedor=uic.loadUi("cadastroVendedores.ui")
 tela_editar_vendedor=uic.loadUi("editarVendedor.ui")
@@ -105,11 +142,21 @@ primeira_tela.pushButtonSair.clicked.connect(exit)
 tela_criar_vendedor.pushButton.clicked.connect(funcao_principal_vendedor)
 # clik cadastro de cliente
 tela_criar_cliente.pushButtonCadastroCliente.clicked.connect(funcao_principal_cliente)
+# botão visualizar vendedor
+primeira_tela.pushButtonVenVisualizar.clicked.connect(visualizar_vendedores)
+# botão visualizar cliente
+primeira_tela.pushButtonClienVisualizar.clicked.connect(visualizar_clientes)
 
 
+
+
+"""cursor = banco.cursor()
+comando_SQL = "SELECT * FROM vendedor"
+cursor.execute(comando_SQL)
+dados_lidos = cursor.fetchall()
+print(dados_lidos)"""
 
 primeira_tela.show()
-#tela_criar_vendedor.show()
 
-app.exec_()
+app.exec()
 
